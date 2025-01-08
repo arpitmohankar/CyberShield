@@ -1,4 +1,4 @@
-# Mega4Restoration
+# CyberShield - A Blockchain based cyber security mediation platform
 
 **Parul University, B.Tech CSE with Cyber Security Specialization. 6th/7th Sem Minor/Major Projects Repo.**
 

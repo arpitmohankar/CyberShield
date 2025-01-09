@@ -1,39 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import axios from 'axios';
 
 function App() {
-  const [count, setCount] = useState(0)
+    const fetchMessage = async () => {
+        try {
+            const response = await axios.get('http://localhost:5000/api/login');
+            console.log(response.data);
+            alert(response.data);
+        } catch (error) {
+            console.error('Error fetching the message:', error);
+            alert('Error fetching the message. Check console for details.');
+        }
+    };
 
-  async function fetchData() {
-    const response = await axios.get('http://localhost:8000/api/login');
-    console.log(response.data);
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <button onClick={fetchData}>Fetch Data</button>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <div>
+            <h1>Decentrilized cyber security Mediation Platform ..</h1>
+            <h2>coming soon...</h2>
+            <button onClick={fetchMessage}>Fetch Message</button>
+        </div>
+    );
 }
-}
-export default App();
+
+export default App;
